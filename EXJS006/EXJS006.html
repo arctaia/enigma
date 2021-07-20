@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio web</title>
+    <script>
+        function agregar(){
+            let elemento = document.querySelector("section > button");
+            // elemento.onclick = mensaje
+            elemento.addEventListener("click", mensaje);
+        }
+        function mensaje() {
+            alert("El botón se ha presionado");
+        }
+        // window.onload = agregar
+        window.addEventListener("load", agregar);
+    </script>
+</head>
+<body>
+    <section>
+        <h1> Sitio web </h1>
+        <button type="btn">Mostrar</button>
+    </section>
+</body>
+</html>

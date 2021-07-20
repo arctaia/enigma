@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio web</title>
+    <script>
+        function agregar(){
+            let lista = document.querySelectorAll("section > p");
+            for (let i = 0; i < lista.length; i++) {
+                let elemento = lista [i];
+                elemento.addEventListener("click", cambiarcolor);
+            }
+        }
+        function cambiarcolor (evento) {
+            let elemento = evento.target;
+            
+            elemento.style.backgroundColor = "#ffaaff"; 
+        }
+           
+        window.addEventListener("load", agregar);
+    </script>
+</head>
+<body>
+    <section>
+        <h1> Sitio web </h1>
+        <p> texto 1 </p>
+        <p> texto 2 </p>
+        <p> texto 3 </p>
+    </section>
+</body>
+</html>

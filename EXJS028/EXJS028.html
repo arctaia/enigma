@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JavaScript</title>
+		<script>
+			function GetHistoryLength() {
+				alert ("Longitud: " + window.history.length);
+			};
+			function goBack() {
+		  		window.history.back();
+			};
+			function myFunction() {​
+				location.hash = "part5";​
+				let x = "La parte de ancla es ahora : " + location.hash;​
+				document.getElementById("demo1").innerHTML = x;
+			};
+			function myFunction1() {
+				let x = location.href;
+				document.getElementById("demo").innerHTML = x;
+			};
+		</script>
+	</head>
+	<body>
+		<p>Haz clic en el botón para establecer la parte de anclaje de la URL actual en # part5 </p>
+		<p id="demo"></p>
+		<p id="demo1"></p>
+		<button onclick="GetHistoryLength()">	Historia	</button>
+		<button onclick="goBack()">	Ir atrás	</button>
+		<button onclick="myFunction()">	Inténtalo	</button>
+		<button onclick="myFunction1()">	Href	</button>
+	</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Web perruna</title>
+		<style>
+			div {
+				background-color: bisque;
+				width: 80%;
+				margin: auto;
+			}
+			#pastor {
+				height: 350pX;
+			}
+			#labrador {
+				height: 400pX;
+			}
+			#chihuahua {
+				height: 150pX;
+			}
+			#acciones0 {
+				background-color: coral;
+				width: 80%;
+				margin: auto;
+				height: 200px;
+				font-size: 4em;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img id="pastor"  src="pastor.png" onclick = "perromorla()">
+			<img id="labrador" src="labrador.png" onclick = "perromusa()">
+			<img id="chihuahua" src="chihuahua.png" onclick = "perrospot()">
+		</div>
+		<div id="acciones0">
+			<br>
+			<p id="acciones1" > </p>
+		</div>
+
+		<script>
+			//PROTOTIPO
+			function Perro (nombre, raza, peso) {
+				this.nombre = nombre;
+				this.raza = raza;
+				this.peso = peso;
+			}
+			Perro.prototype.genero ="canino"
+			Perro.prototype.ladrar = function() {
+				if (this.peso > 25) {alert (document.getElementById("acciones1").textContent = this.nombre + "   ¡GUAU GUAU!");}
+				else {alert (document.getElementById("acciones1").textContent = this.nombre + "   guau");}
+			}
+			Perro.prototype.correr = function() {alert(document.getElementById("acciones1").textContent = this.nombre + "   ¡CORRE!");}
+			Perro.prototype.menear = function() {alert(document.getElementById("acciones1").textContent = this.nombre + "   ¡MENEA EL RABO!");}
+
+			// INCUBADORA DE PERROS
+			let morla = new Perro("Morla", "pastor alemán", 40);
+			let musa = new Perro("Musa", "labrador", 45);
+			let triana = new Perro("Triana", "labrador", 45);
+			let spot = new Perro("Spot", "chihuahua", 12);
+
+			// LADRIDOS
+			const ladrido = new Audio('perro1.mp3');
+			const ladrido1 = new Audio('perro2.mp3');
+			const ladrido2 = new Audio('perro3.mp3');		
+
+			// ACCIONES DE LOS PERROS
+			function perromorla () {
+				ladrido1.play();
+				morla.ladrar();
+				morla.correr();
+				morla.menear();
+			}
+			function perromusa () {
+				ladrido2.play();
+				musa.ladrar();
+				musa.correr();
+				musa.menear();
+			}
+			function perrospot () {
+				ladrido.play();
+				spot.ladrar();
+				spot.correr();
+				spot.menear();
+				
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <style>
+        .page-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: burlywood;
+        }
+        #lienzo, #div-lienzo {
+            border: 1px solid #e60707;
+            /*width: 600px;
+            height: 500px;*/
+            background-color:darksalmon;
+        }
+    </style>
+    <script>
+
+        window.addEventListener ("load", crearLienzo)
+        function crearLienzo() {
+            let c = document.getElementById("lienzo");
+            let ctx = c.getContext("2d")
+        
+            let lineas1 = document.getElementById("lineas");
+            lineas1.addEventListener("click", crearLineas)
+            function crearLineas () {
+                ctx.beginPath();
+                ctx.moveTo(0,0);
+                ctx.lineTo(600,500);
+                ctx.lineWidth = 3; 
+                ctx.strokeStyle = "#0000FF";
+                ctx.stroke();
+                ctx.closePath();
+                }
+
+            let arcos1 = document.getElementById("arcos");
+            arcos1.addEventListener ("click", crearArcos)
+            function crearArcos() {
+                ctx.beginPath();
+                ctx.arc(200, 200, 100, 0, 2 * Math.PI);
+                ctx.strokeStyle = "red";
+                ctx.stroke();
+            }
+            let cara1 = document.getElementById("cara");
+            cara1.addEventListener ("click", crearCara)
+            function crearCara() {
+                ctx.beginPath();
+                ctx.arc(75, 75, 50, 0, Math.PI*2, true); //Circulo externo
+                ctx.moveTo(110, 75);  
+                ctx.arc(75, 75, 35, 0, Math.PI, false);//Boca (contra reloj)
+                ctx.moveTo(65, 65);
+                ctx.arc(60, 65, 5, 0, Math.PI*2, true); //Ojo izquierdo
+                ctx.moveTo(95, 65);
+                ctx.arc(90, 65, 5, 0, Math.PI*2, true); //Ojo derecho
+                ctx.stroke();
+                ctx.closePath();
+            }
+
+            let bezier1 = document.getElementById("bezier");
+            bezier1.addEventListener ('click', crearBezier)
+            function crearBezier() {
+                ctx.clearRect(0, 0 , 200, 200);
+                ctx.beginPath();
+                ctx.moveTo(10, 180);
+                ctx.bezierCurveTo(40, 10, 160, 190, 180, 20); //x, y, x, y, xf, yf
+                ctx.stroke();     
+                contexto.closePath();
+            }
+            let curvacuadratica1 = document.getElementById("curvaCuadratica");
+            curvacuadratica1.addEventListener ("click", crearCurvacuadratica)
+            function crearCurvacuadratica() {
+            ctx.clearRect(0, 0 , 200, 200);
+            ctx.beginPath();
+            ctx.moveTo(100, 100);
+            ctx.quadraticCurveTo (180, 20, 200, 200);//x, y xf, yf
+            ctx.stroke();     
+            ctx.closePath();
+            }
+            let enigma1 = document.getElementById("enigma");
+            enigma1.addEventListener ("click", crearEnigma)
+            function crearEnigma() {
+            ctx.clearRect(0, 0 , 200, 200);
+            ctx.beginPath();
+            ctx.moveTo(100, 100);
+            ctx.arc(100, 100, 50, 0, Math.PI*2, true);
+            ctx.quadraticCurveTo (180, 20, 200, 200); 
+            ctx.arc(180, 20, 20, 0, Math.PI*2, true);
+            ctx.lineTo(300,300);
+            ctx.arc(300, 300, 10, 0, Math.PI*2, true);
+            ctx.lineTo(200,400);
+            ctx.bezierCurveTo(200, 400, 160, 190, 500, 300);
+            let grd = ctx.createLinearGradient(0, 0, 600, 400);
+            grd.addColorStop(0, "red");
+            grd.addColorStop(1, "white");
+            ctx.fillStyle = grd;
+            ctx.fillRect(0, 0, 600, 500);
+            ctx.font = "60px Arial";
+            ctx.fillText("?", 500, 300);
+            ctx.stroke();     
+            ctx.closePath();
+            }
+        }
+        
+        /*
+        window.addEventListener ('load' , () => {
+        //Capturando canvas
+        let canvas = document.querySelector ('#lienzo');
+        //Capturar o definir el contexto 2D o 3D
+        let contexto = canvas.getContext('2d');
+
+        let btnCrearLineas = document.querySelector('#lineas');
+        btnCrearLineas.addEventListener ('click', () => {
+            contexto.beginPath();
+            contexto.moveTo(10, 10);
+            contexto.lineTo(180, 20);
+            contexto.lineWidth = 5; // 5px
+            contexto.strokeStyle = "#0000FF";
+            contexto.stroke();
+            contexto.closePath();
+        })
+        });
+        */
+    </script>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <!-- Title -->
+        <span class="mdl-layout-title">Canvas</span>
+        <!-- Add spacer, to align navigation to the right -->
+        <div class="mdl-layout-spacer"></div>
+        <!-- Navigation. We hide it in small screens. -->
+        <nav class="mdl-navigation mdl-layout--large-screen-only">
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+      </div>
+    </header>
+    <div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Canvas</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+        <a class="mdl-navigation__link" href="">Link</a>
+      </nav>
+    </div>
+    <main class="mdl-layout__content">
+        <button id ="lineas" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+            Línea
+        </button>
+        <button id ="arcos" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+            Arcos
+        </button>
+        <button id ="cara" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+            Cara
+        </button>
+        <button id ="bezier" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+            Bezier
+        </button>
+        <button id ="curvaCuadratica" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+            Curva cuadrática
+        </button>
+        <button id ="enigma" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+            Enigma
+        </button>
+      <div class="page-content">
+            <div id = "div-lienzo">
+                <canvas id ="lienzo" width="600" height="500" > no hay soporte de CANVAS</canvas>    
+            </div>
+      </div>
+    </main>
+    
+</body>
+</html>

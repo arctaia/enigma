@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos de comunicación</title>
+    <style>
+        :root {
+            --colorfondo: indianred;   /* variable CSS  */
+        }
+        #demo {
+            background-color: var(--colorfondo);
+        }
+    </style>
+</head>
+<body>
+    <div id="demo"> </div>
+    <script>
+		// declaración de variables let mensaje = "To dream or not to dream, that's the question";
+        let suma = 13 + 22;
+        let h = 0.243e-23;
+		let admin = "";
+		let alea = Math.random();
+		let aleph = Infinity;
+		let numero = Math.pow(2, 53);	//número entero seguro representado con doble prewcisión: 64 bits   --IEEE 754          2e53-1         64bits:  53 para la base y 11 para el exponente]
+        const c = 299792.458;            // velocidad de la luz en el vacío Km/s
+		let millon = 1_000_000;
+        let fraccion = 0.234_101_445
+        //let numero = "1" + "0".repeat(100);
+        let binario = 0b1101110111;
+        let cadena = "Madrid\ Málaga\ París";
+        let falso = false;
+        //let a=b=c=2021+4000;
+        let z = 15;
+        let k = null;
+        let s =(1+2, k);
+
+        let f = 5 > 1;
+        
+        document.write(alea);
+        document.write(h);    
+        document.write(aleph);    
+        document.write(millon); 
+        document.write(fraccion); 
+        
+        document.write(numero); 
+        document.write(4 < 5);
+        document.write(4 != 5);
+        document.write(Infinity == Infinity);
+        document.write(binario); 
+        document.write(cadena); 
+        document.write("Madrid" + suma);
+        document.write(2**Infinity);
+        document.write(falso);
+        document.write(+true);      // convierte a número
+        document.write(+"");
+        document.write(+"2021" + +"3000");
+        document.write(Number("5000") + Number("40"));
+        //document.write(a, b, c);
+        document.write(++z);
+        document.write(z++);
+        document.write(s);
+        document.write(f);
+
+        document.write( 6==6, 4!=9 , 5<1 );
+
+
+
+    
+
+        
+    </script>
+</body>
+</html>

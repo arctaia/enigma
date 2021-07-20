@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<h3>innerText and textContent.</h3>
+		<p id="demo">Esta p contiene un <span style="display:none">elemento oculto</span> y un <span>elemento visible</span>.</p>
+		<button onclick="getTextContent()">	«textContent»	</button>
+		<button onclick="getInnerText()">	«innerText»	</button>
+		<p id="demo"></p>
+
+		<script>
+			function getTextContent() {
+					alert(document.getElementById("demo").textContent)
+			}
+			function getInnerText() {
+					alert(document.getElementById("demo").innerText)
+			}
+		</script>
+	</body>
+</html>

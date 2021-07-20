@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <canvas id="myCanvas" width="400" height="200" style="border:1px solid #d3d3d3;">
+    no hat soporte de CANVAS</canvas>
+
+    <script>
+        let c = document.getElementById("myCanvas");
+        let ctx = c.getContext("2d");
+        ctx.moveTo(0,0);
+        ctx.lineTo(400,200);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+        ctx.stroke();
+
+        ctx.font = "30px Arial";
+        ctx.fillText("Hello World", 10, 50);
+        ctx.strokeText("Hello World", 100, 100);
+
+        var grd = ctx.createLinearGradient(0, 0, 400, 0);
+        grd.addColorStop(0, "red");
+        grd.addColorStop(1, "white");
+
+        // Fill with gradient
+        ctx.fillStyle = grd;
+        ctx.fillRect(10, 150, 350, 150);
+        ctx.fillStyle = grd;
+        ctx.fillRect(10, 150, 350, 150);
+
+        
+        function myCanvas() {
+            let img = document.getElementById("clara");
+            ctx.drawImage(img,10,10);
+        }
+
+    </script>
+    <img id="clara" src="ClaraAsis.png" alt="Clara de Asís" width="100" height="120">
+
+    <p><button onclick="myCanvas()">Imagen</button></p>
+</body>
+</html>

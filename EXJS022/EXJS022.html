@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.character { 
+				width:80%;
+				background-color: darkgrey;
+				display: flex;
+				font-size: 0.9em;
+				margin: auto;
+				}
+			.oculto {display:none;
+					background-color:darkorange;
+					}
+			.visible1 {display:block;
+					background-color:darkorchid;
+					}
+			#nya {display:none}
+		</style>
+	</head>
+	<body>
+		<div class="character">
+			<img id ="kai" src="kai.png" onclick="ver()">
+			<img id ="nya" src="nya.png">
+			<div>
+				<p class="oculto"> Name</p>
+				<p id="name"></p>
+				<p class="oculto"> Nickname</p>
+				<p id="nickname"></p>
+				<p class="oculto"> Likes</p>
+				<p id="likes"></p>
+				<p class="oculto"> Dislikes</p>
+				<p id="dislikes"></p>
+				<p class="oculto"> Friends</p>
+				<p id="friends"></p>
+				<p class="oculto"> Foes</p>
+				<p id="foes"></p>
+				<p class="oculto"> Skills</p>
+				<p id="skills"></p>
+				<p class="oculto"> Gear</p>
+				<p id="gear"></p>
+				<p class="oculto"> Family history</p>
+				<p id="family_history"></p>
+			</div>
+		</div>
+		<script>
+			let personaje = {
+				name: "Kai",
+				nickname: "Master of fire",
+				likes: "rushing into danger",
+				dislikes: "losing battles",
+				friends: ["Master Wu", "Nya"],
+				foes: ["Samukai", "Frakjaw"],
+				skills: "making wapons",
+				gear: "sword of fire",
+				family_history: " Kai and his sister, Nya, took over the family Blacksmith Shop when their parents disappeared. Wu saw that Kai had the potential to be a ninja and trained him to use his natural 'fire' to master Spinjitzu",
+				character: function () {
+					document.getElementById("name").textContent = this.name;
+					document.getElementById("nickname").textContent = this.nickname;
+					document.getElementById("likes").textContent = this.likes;
+					document.getElementById("dislikes").textContent = this.dislikes;
+					document.getElementById("friends").textContent = this.friends;
+					document.getElementById("foes").textContent = this.foes;
+					document.getElementById("skills").textContent = this.skills;
+					document.getElementById("gear").textContent = this.gear;
+					document.getElementById("family_history").textContent = this.family_history;
+
+				},
+				get hola () {alert("Hola")},
+				/*set establecer (nombre) {
+					this.name = nombre.toUpperCase();
+				}*/
+			}
+			let Nya = new Object();
+			Nya.name = "Nya";
+			Nya.nickname = "The water ninja";
+			Nya.likes = "Her independence";
+			Nya.dislikes = "Being kidnapped";
+			Nya.friends = "Jay";
+			Nya.foes = "Skulkin";
+			Nya.skills = "Tech wiz";
+			Nya.gear = "Daggers";
+			
+			
+
+			function ver () {
+				//document.getElementsByClassName("oculto")[0].setAttribute("class", "visible1");
+				
+
+				personaje.hola;				// get
+
+				//personaje.establecer("gea");		//set
+
+				alert (personaje.name);
+
+				for (i=0; i<document.getElementsByClassName("oculto").length; i++ ){
+						document.getElementsByClassName("oculto")[i].style.display = "block";
+					};
+				document.getElementsByClassName("oculto")[0].style.backgroundColor = "red";
+				document.getElementsByClassName("oculto")[8].style.backgroundColor = "green";
+				
+				
+				personaje.character();		//function
+
+				document.getElementById("nya").style.display = "block";
+				for (let i in Nya) alert(Nya[i]);
+				alert(Object.values(Nya));
+				alert(JSON.stringify(Nya));
+				
+
+			}
+
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<script>
+			let resultado = sumarTodo(5, 4, 13, 10, 9, 10, 11, 3);  //argumentos
+		  	alert( "sumar todo = " + resultado );
+			function sumarTodo(){
+				let suma = 0;
+				for(let i = 0; i < arguments.length; i++){
+					suma += arguments[i]; // suma = suma + arguments[i]
+				}
+				return suma;
+			}
+
+			//Declaración Función de tipo Expresión        a: parámetro     4: argumento
+			let sumar = function (a = 4, b = 5){			// está definiendo los parámetros con un valor por defecto
+				alert("argumento: " + arguments[0]);
+				alert("argumento: " + arguments[1]);
+				alert("argumento: " + arguments[2]);
+				return a + b + (arguments[2] || 0);
+			};
+
+			resultado = sumar();
+			alert("suma = " + resultado);
+
+			resultado = sumar(3, 15, 77);
+			alert("suma = " + resultado);
+
+			//Tipos primitivos
+			let x = 55;
+
+			function cambiarValor(a){
+				a = 20;
+				return a+100;
+			}
+			//Paso por valor
+			alert(cambiarValor(x));
+			alert(x);
+			
+			function cambiarValor2(a){
+				return a+100;
+			}
+			alert(cambiarValor2(x));
+			alert(x);
+
+			const persona = {
+				nombre: 'Juan',
+				apellido: 'Perez'
+			}
+			function update(p1){
+				p1.nombre = 'Leonardo';
+				p1.apellido = 'da Vinci';
+			}
+
+			//Paso por referencia
+			update( persona );
+
+			alert( persona.nombre + " " + persona.apellido );
+
+		  </script>
+	</body>
+</html>

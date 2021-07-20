@@ -1,0 +1,60 @@
+@font-face{
+    font-family: Lobster;
+    src: url(fonts/Lobster.woff)
+         format("woff"),
+         url(fonts/Lobster.ttf)
+         format("truetype");
+    font-weight:bold;
+    font-style:normal;
+}
+
+
+*{
+    box-sizing:border-box;
+}
+
+.h3{font-family: Lobster, sans-serif;
+}
+
+.calculadora{
+    display:block;
+    margin:0 auto;
+    padding:20px;
+    background-color:#FC4A1A;
+    width:350px;
+    height:600px;
+    border-radius: 25px;
+    box-shadow: 15px 15px 10px 8px #7a1a00;
+  }
+  
+  .calculadora td button{
+    display:block;
+    width:70px;
+    height: 70px;
+    font-size: 25px;
+    border-style:solid;
+    box-shadow:2px 2px 4px 2px #db2f00;
+  }
+
+  #creditos{
+    display:block;
+    padding-top:20px;
+    color:#fff;
+    text-align: center;
+    width:300px;
+  }
+
+  #resultado{
+    display:block;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+    width:300px;
+    height: 100px;
+    line-height: 100px;
+    background-color:#fff;
+    border-radius: 30px;
+    overflow-y: scroll;
+    font-family: Lobster, sans-serif;
+    color: #4ABDAC;
+  }

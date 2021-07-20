@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			#demo {background-color:coral;font-size: 2em;}
+			#demo2 {background-color: aquamarine;font-size: 1.5em;}
+		</style>
+	</head>
+	<body>
+		<p id="demo"> Cuentos maravillosos  <span style="display:none">entrando en un laberinto encantado del que no se puede salir</span> </p>
+		<p id="demo2"> Como la vianda quiere la sal  <span style="display:none">Un rey tiene tres hijas, y un día se encierra en un cuarto con ellas y las pregunta cuanto le quieren. La mayor responde que más que a sí misma, la segunda que más que a la niña de sus ojos, y la tercera como la vianda quiere a la sal. Al rey le disgusta tanto la última respuesta que ordena a sus pajes que se lleven a su hija menor al monte, la maten y le traigan como prueba sus ojos. Los pajes se llevan a la princesa al monte, pero en vez de matarla, como el rey les había ordenado, la abandonan en el monte, matan en su lugar a una perra, le sacan los ojos y se los llevan al rey como si fuesen los de la princesa. La princesa camina y camina hasta llegar a otro reino, en el que el rey tiene setenta gansos y busca a una criada para que se los cuide. Ella se presenta en palacio y la cogen de gansera. A la mañana siguiente la princesa se lleva los gansos al campo, y cuando llega a una peña se sienta a peinarse. Mientras que se peina se le acerca un ganso, da cuatro vueltas alrededor de la peña y cae muerto al suelo. Lo mismo ocurre al día siguiente, y al siguiente. El rey al principio no le da importancia, pero cuando ve que se le están muriendo un ganso por día, su hijo de veinte años decide ir a espiar a la pastora de gansos para averiguar que narices hace con los gansos. Cuando ve a la pastora darse cuenta que en realidad es una princesa al verla sentada en la peña peinándose, el príncipe vuelve al castillo de su padre y le anuncia que se quiere casar con la pastora de gansos por que ella en realidad es princesa. El rey acepta y ese mismo día la princesa es llevada ante el rey para preguntarla si se quiere casar con su hijo. Ella acepta, pero con la condición de que a la boda sea invitado su padre, y que ella sea quién desazone la comida. Cuando termina el banquete la novia le pregunta a todos los presentes que les pareció la comida, y todos responden que le faltaba la sal. La novia les cuenta a todos la historia de como su padre la desterró del reino, y cuando revela que ella es la hija menor que su padre repudió, el rey casi se muere. El monarca le pide perdón a su hija y nombra herederos de su reino a su hija menor y a su yerno.</span></p>
+		
+		<button onclick="obtenerContenido()">título</button>
+		<!-- función anónima -->
+		<button onclick="(function () {alert(document.getElementById('demo2').textContent)}())">cuento</button>
+		<button onclick="f1(13,27)()">13 + 27</button>
+		<button onclick="f2()">¿Por qué contamos cuentos?</button>
+
+		<script>
+			// función declarada
+			function obtenerContenido() {
+					alert(document.getElementById("demo").textContent)
+			}
+			// función flecha
+			let f1 = (a,b) => alert(a+b); 
+			let f2 = () => alert("para preparar la mente del niño a entender el doble sentido que casi todo va a tener en la vida");
+			
+		</script>
+	</body>
+</html>
